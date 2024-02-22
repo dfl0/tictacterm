@@ -1,11 +1,11 @@
-CC= g++
-CFLAGS= -Wall -Wextra -g
+CC = g++
+FLAGS = -Wall -Wextra
 
-main: main.o
-	$(CC) $(FLAGS) main.o -o $@
+test: clean main
+	./main
 
-main.o: main.cpp
-	$(CC) $(FLAGS) -c main.cpp -o $@
+main: main.cpp
+	$(CC) $(FLAGS) -o main main.cpp
 
 clean:
-	rm main && rm *.o
+	rm main
